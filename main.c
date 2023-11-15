@@ -12,8 +12,6 @@ InfoMfile Inf = {NULL, NULL, NULL, 0};
 
 int runCommand(stack_t **head, char *currentLine, unsigned int lineNumber, FILE *file)
 {
-	unsigned int i = 0;
-	char *cmdName;
 	instruction_t function_table[] = {
 				{"push", get_push}, {"pall", get_pall}, {"pint", get_pint},
 				{"pop", get_pop}, {"swap", get_swap}, {"add", get_add},
@@ -24,6 +22,8 @@ int runCommand(stack_t **head, char *currentLine, unsigned int lineNumber, FILE 
 				{"head", get_stack}, {"queue", get_queue},
 				{NULL, NULL}
 				};
+	unsigned int i = 0;
+	char *cmdName;
 
 	cmdName = strtok(currentLine, " \n\t");
 	if (cmdName && cmdName[0] == '#')
@@ -33,7 +33,7 @@ int runCommand(stack_t **head, char *currentLine, unsigned int lineNumber, FILE 
 	{
 		if (strcmp(cmdName, function_table[i].opcode) == 0)
 		{
-			function_table[i].f(head, lineNumber);
+			function_table[i].func(head, lineNumber);
 			return (0);
 		}
 		i++;
@@ -59,9 +59,10 @@ int runCommand(stack_t **head, char *currentLine, unsigned int lineNumber, FILE 
 int main(int argc, char *argv[])
 {
 	FILE *file;
-	stack_t *head = NULL;
 	char *currentLine;
-	size_t isValidLine = 1, size = 0;
+	stack_t *head = NULL;
+	ssize_t isValidLine = 1;
+	size_t size = 0;
 	unsigned int lineNumber = 0;
 
 	if (argc != 2)
