@@ -10,7 +10,8 @@ InfoMfile Inf = {NULL, NULL, NULL, 0};
 * @currentLine: current line
 */
 
-int runCommand(stack_t **head, char *currentLine, unsigned int lineNumber, FILE *file)
+int runCommand(stack_t **head, char *currentLine,
+		unsigned int lineNumber, FILE *file)
 {
 	instruction_t function_table[] = {
 				{"push", get_push}, {"pall", get_pall}, {"pint", get_pint},
@@ -39,12 +40,12 @@ int runCommand(stack_t **head, char *currentLine, unsigned int lineNumber, FILE 
 		i++;
 	}
 	if (cmdName && function_table[i].opcode == NULL)
-	{ 
+	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", lineNumber, cmdName);
 		fclose(file);
 		free_stack(*head);
 		free(currentLine);
-		exit(EXIT_FAILURE); 
+		exit(EXIT_FAILURE);
 	}
 	return (1);
 }

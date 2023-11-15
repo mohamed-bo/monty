@@ -32,7 +32,7 @@ void get_push(stack_t **head, unsigned int lineNumber)
 			addqueue(head, number);
 	}
 	else
-	{ 
+	{
 		fprintf(stderr, "L%d: usage: push integer\n", lineNumber);
 		free_stack(*head);
 		fclose(Inf.file);

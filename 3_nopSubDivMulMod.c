@@ -83,7 +83,7 @@ void get_mul(stack_t **head, unsigned int lineNumber)
 	stack_t *temp;
 	int mul;
 
-  if (!(*head)->next)
+	if (!(*head)->next)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", lineNumber);
 		free_stack(*head);
@@ -109,7 +109,7 @@ void get_mod(stack_t **head, unsigned int lineNumber)
 	stack_t *temp;
 	int mod;
 
-  if (!(*head)->next)
+	if (!(*head)->next)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", lineNumber);
 		free_stack(*head);

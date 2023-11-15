@@ -20,9 +20,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -35,17 +35,18 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*func)(stack_t **stack, unsigned int  lineNumber);
+	char *opcode;
+	void (*func)(stack_t **stack, unsigned int  lineNumber);
 } instruction_t;
 
 /**
- * struct InMfilee - args and file and proprietes
+ * struct InfoMfilee - args and file and proprietes
  * @arg: stack or pile
  * @file: file
  * @currentLine: number of current line
  * @stackType: type of stack
  * Description: set proprietes and made it puplic throug project
+ * for stack, queues, LIFO, FIFO
  */
 
 typedef struct InfoMfilee
@@ -57,7 +58,8 @@ typedef struct InfoMfilee
 }  InfoMfile;
 
 extern InfoMfile Inf;
-int runCommand(stack_t **head, char *currentLine, unsigned int lineNumber, FILE *file);
+int runCommand(stack_t **head, char *currentLine, unsigned int lineNumber,
+		FILE *file);
 void get_push(stack_t **head, unsigned int lineNumber);
 void get_pall(stack_t **head, unsigned int lineNumber);
 void get_pint(stack_t **head, unsigned int lineNumber);
