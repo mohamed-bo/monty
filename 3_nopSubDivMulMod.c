@@ -26,7 +26,7 @@ void get_sub(stack_t **head, unsigned int lineNumber)
 	if (!(*head)->next)
 	{
 		fprintf(stderr, "L%d: can't sub, stack too short\n", lineNumber);
-		free_stack(*head);
+		freeStack(*head);
 		fclose(Inf.file);
 		free(Inf.currentLine);
 		exit(EXIT_FAILURE);
@@ -52,7 +52,7 @@ void get_div(stack_t **head, unsigned int lineNumber)
 	if (!(*head)->next)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", lineNumber);
-		free_stack(*head);
+		freeStack(*head);
 		fclose(Inf.file);
 		free(Inf.currentLine);
 		exit(EXIT_FAILURE);
@@ -61,7 +61,7 @@ void get_div(stack_t **head, unsigned int lineNumber)
 	if (temp->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", lineNumber);
-		free_stack(*head);
+		freeStack(*head);
 		fclose(Inf.file);
 		free(Inf.currentLine);
 		exit(EXIT_FAILURE);
@@ -86,7 +86,7 @@ void get_mul(stack_t **head, unsigned int lineNumber)
 	if (!(*head)->next)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", lineNumber);
-		free_stack(*head);
+		freeStack(*head);
 		fclose(Inf.file);
 		free(Inf.currentLine);
 		exit(EXIT_FAILURE);
@@ -112,7 +112,7 @@ void get_mod(stack_t **head, unsigned int lineNumber)
 	if (!(*head)->next)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", lineNumber);
-		free_stack(*head);
+		freeStack(*head);
 		fclose(Inf.file);
 		free(Inf.currentLine);
 		exit(EXIT_FAILURE);
@@ -121,7 +121,7 @@ void get_mod(stack_t **head, unsigned int lineNumber)
 	if (temp->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", lineNumber);
-		free_stack(*head);
+		freeStack(*head);
 		fclose(Inf.file);
 		free(Inf.currentLine);
 		exit(EXIT_FAILURE);

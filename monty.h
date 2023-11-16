@@ -80,7 +80,7 @@ void get_queue(stack_t **head, unsigned int lineNumber);
 void get_stack(stack_t **head, unsigned int lineNumber);
 void addnode(stack_t **head, int n);
 void addqueue(stack_t **head, int n);
-void free_stack(stack_t *head);
+void freeStack(stack_t *head);
 
 #endif
 

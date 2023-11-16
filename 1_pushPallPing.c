@@ -19,7 +19,7 @@ void get_push(stack_t **head, unsigned int lineNumber)
 			if (Inf.arg[i] > 57 || Inf.arg[i] < 48)
 			{
 				fprintf(stderr, "L%d: usage: push integer\n", lineNumber);
-				free_stack(*head);
+				freeStack(*head);
 				fclose(Inf.file);
 				free(Inf.currentLine);
 				exit(EXIT_FAILURE);
@@ -34,7 +34,7 @@ void get_push(stack_t **head, unsigned int lineNumber)
 	else
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", lineNumber);
-		free_stack(*head);
+		freeStack(*head);
 		fclose(Inf.file);
 		free(Inf.currentLine);
 		exit(EXIT_FAILURE);
@@ -73,7 +73,7 @@ void get_pint(stack_t **head, unsigned int lineNumber)
 	if (*head == NULL)
 	{
 		fprintf(stderr, "L%u: can't pint, stack empty\n", lineNumber);
-		free_stack(*head);
+		freeStack(*head);
 		fclose(Inf.file);
 		free(Inf.currentLine);
 		exit(EXIT_FAILURE);

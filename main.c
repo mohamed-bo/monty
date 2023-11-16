@@ -43,7 +43,7 @@ int runCommand(stack_t **head, char *currentLine,
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", lineNumber, cmdName);
 		fclose(file);
-		free_stack(*head);
+		freeStack(*head);
 		free(currentLine);
 		exit(EXIT_FAILURE);
 	}
@@ -90,7 +90,7 @@ int main(int argc, char *argv[])
 		}
 		free(currentLine);
 	}
-	free_stack(head);
+	freeStack(head);
 	fclose(file);
 	return (0);
 }

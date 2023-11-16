@@ -13,7 +13,7 @@ void get_pchar(stack_t **head, unsigned int lineNumber)
 	if (!temp)
 	{
 		fprintf(stderr, "L%d: can't pchar, stack empty\n", lineNumber);
-		free_stack(*head);
+		freeStack(*head);
 		fclose(Inf.file);
 		free(Inf.currentLine);
 		exit(EXIT_FAILURE);
@@ -21,7 +21,7 @@ void get_pchar(stack_t **head, unsigned int lineNumber)
 	if (temp->n < 0 || temp->n > 127)
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", lineNumber);
-		free_stack(*head);
+		freeStack(*head);
 		fclose(Inf.file);
 		free(Inf.currentLine);
 		exit(EXIT_FAILURE);

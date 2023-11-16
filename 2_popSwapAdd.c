@@ -13,7 +13,7 @@ void get_pop(stack_t **head, unsigned int lineNumber)
 	if (*head == NULL)
 	{
 		fprintf(stderr, "L%d: can't pop an empty stack\n", lineNumber);
-		free_stack(*head);
+		freeStack(*head);
 		fclose(Inf.file);
 		free(Inf.currentLine);
 		exit(EXIT_FAILURE);
@@ -43,7 +43,7 @@ void get_swap(stack_t **head, unsigned int lineNumber)
 	if (size < 2)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", lineNumber);
-		free_stack(*head);
+		freeStack(*head);
 		fclose(Inf.file);
 		free(Inf.currentLine);
 		exit(EXIT_FAILURE);
@@ -68,7 +68,7 @@ void get_add(stack_t **head, unsigned int lineNumber)
 	if (!(*head)->next)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", lineNumber);
-		free_stack(*head);
+		freeStack(*head);
 		fclose(Inf.file);
 		free(Inf.currentLine);
 		exit(EXIT_FAILURE);

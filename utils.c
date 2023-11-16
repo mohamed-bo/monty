@@ -17,7 +17,7 @@ void addnode(stack_t **head, int n)
 	if (new == NULL)
 	{
 		printf("malloc error\n");
-		free_stack(*head);
+		freeStack(*head);
 		fclose(Inf.file);
 		free(Inf.currentLine);
 		exit(EXIT_FAILURE);
@@ -31,11 +31,11 @@ void addnode(stack_t **head, int n)
 }
 
 /**
-* free_stack - free stack list
+* freeStack - free stack list
 * @head: pointer to head of Stac
 */
 
-void free_stack(stack_t *head)
+void freeStack(stack_t *head)
 {
 	stack_t *iter;
 
@@ -63,7 +63,7 @@ void addqueue(stack_t **head, int n)
 	if (new == NULL)
 	{
 		printf("malloc error\n");
-		free_stack(*head);
+		freeStack(*head);
 		fclose(Inf.file);
 		free(Inf.currentLine);
 		exit(EXIT_FAILURE);
