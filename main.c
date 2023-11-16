@@ -34,7 +34,7 @@ int runCommand(stack_t **head, char *currentLine,
 	{
 		if (strcmp(cmdName, function_table[i].opcode) == 0)
 		{
-			function_table[i].func(head, lineNumber);
+			function_table[i].f(head, lineNumber);
 			return (0);
 		}
 		i++;

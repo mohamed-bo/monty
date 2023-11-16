@@ -28,15 +28,15 @@ typedef struct stack_s
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
- * @func: function to handle the opcode
+ * @f: function to handle the opcode
  *
  * Description: opcode and its function
  * for stack, queues, LIFO, FIFO
  */
 typedef struct instruction_s
 {
-	char *opcode;
-	void (*func)(stack_t **stack, unsigned int  lineNumber);
+        char *opcode;
+        void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 /**
@@ -58,6 +58,7 @@ typedef struct InfoMfilee
 }  InfoMfile;
 
 extern InfoMfile Inf;
+
 int runCommand(stack_t **head, char *currentLine, unsigned int lineNumber,
 		FILE *file);
 void get_push(stack_t **head, unsigned int lineNumber);
