@@ -31,8 +31,8 @@ void addnode(stack_t **head, int n)
 }
 
 /**
-* free_stack - frees a doubly linked list
-* @head: head of the stack
+* free_stack - free stack list
+* @head: pointer to head of Stac
 */
 
 void free_stack(stack_t *head)
